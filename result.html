@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Scam Call Analysis</title>
+    <style>
+        /* Reset margin and padding */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        /* Full height for html and body */
+        html, body {
+            height: 100%;
+            font-family: Arial, sans-serif;
+        }
+
+        /* Background image styling */
+        body {
+            background-image: url('https://r.mobirisesite.com/1224610/assets/images/photo-1568952433726-3896e3881c65.jpeg'); /* Update with your image path */
+            background-size: cover; /* Cover the entire viewport */
+            background-position: center; /* Center the background image */
+            background-repeat: no-repeat; /* Prevent repetition of the image */
+            color: #333; /* Default text color */
+        }
+
+        /* Section styling */
+        .features05 {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 100%;
+            padding: 20px;
+        }
+
+        /* Container styling */
+        .container {
+            background: rgb(241, 242, 243,2); /* Fully opaque white */
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+            padding: 20px;
+            max-width: 800px; /* Increased max-width */
+            width: 100%;
+            font-family: 'Courier New', Courier, monospace;
+            font-weight: bold;
+        }
+
+        h1 {
+            text-align: center;
+            color: #333;
+        }
+
+        h2 {
+            text-align: center;
+            padding: 10px;
+        }
+
+        .scam {
+            color: red;
+        }
+
+        .safe {
+            color: green;
+        }
+
+        .result-item {
+            margin-bottom: 15px;
+            padding: 10px;
+            border-bottom: 1px solid #eaeaea;
+        }
+
+        .result-item:last-child {
+            border-bottom: none;
+        }
+
+        .footer {
+            text-align: center;
+            margin-top: 20px;
+            font-size: 0.9em;
+            color: #666;
+        }
+
+        /* Responsive adjustments */
+        @media (max-width: 768px) {
+            .container {
+                max-width: 100%;
+                padding: 10px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <section class="features05">
+        <div class="container">
+            <h1>Scam Call Analysis</h1>
+
+            <div class="result-item">
+                <strong>Transcription:</strong> <p>{{ result['transcription'] }}</p>
+            </div>
+
+            <div class="result-item">
+                <strong>Keywords Found:</strong> <p>{{ result['keywords_found'] }}</p>
+            </div>
+
+            <div class="result-item">
+                <strong>Emotion Detected:</strong> <p>{{ result['emotion_detected'] }}</p>
+            </div>
+
+            {% if result['scam_detected'] %}
+                <h2 class="scam">🚨 This call is a SCAM! 🚨</h2>
+            {% else %}
+                <h2 class="safe">✅ This call is SAFE.</h2>
+            {% endif %}
+
+            <div class="footer">
+                &copy; 2025 Scam Call Analysis. All rights reserved.
+            </div>
+        </div>
+    </section>
+</body>
+</html>
